@@ -1,7 +1,7 @@
 
  
  [
-    { "Name":"Thilini","Age":"22"},
-    {"Name":"janith","Age":"24"}
+    { "name":"Thilini","age":"22"},
+    {"name":"janith","age":"24"}
 
   ]

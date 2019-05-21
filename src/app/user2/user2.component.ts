@@ -9,12 +9,13 @@ import {UserserviceService } from '../userservice.service';
 })
 export class User2Component implements OnInit {
   userget2:User;
-  userAr=[];
+  public employees=[];
   constructor(private _emp:UserserviceService) { }
 
   ngOnInit() {
-    this.userget2=this._emp.getuser();
-    this.userAr=this._emp.getarray();
+   this.userget2=this._emp.getuser();
+    this._emp.getarray() 
+        .subscribe(data => this.employees=data);
   }
 
 }

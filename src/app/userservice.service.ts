@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User} from './model/model';
-//import { HttpClient } from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
+import { IEemployee } from './Employee';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,21 +22,18 @@ export class UserserviceService {
 
   }
 
+  private _url:string ='/assets/Data/employees.json'
   getuser(){
     return this.user;
   }
 
-  getarray(){
-
-    return [
-      { "Name":"Thilini","Age":"22"},
-      {"Name":"janith","Age":"24"}
-  
-    ]
+  getarray(): Observable<IEemployee[]>{
+      return this.http.get<IEemployee[]>(this._url)
+   
   }
 
   
- // constructor( private http:HttpClient) { }
+  constructor( private http: HttpClient) { }
 }
 
 
