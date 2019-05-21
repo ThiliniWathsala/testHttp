@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { User} from './model/model';
+//import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserserviceService {
-
- 
 
   user:User={
     fname:'thilini',
@@ -17,6 +16,8 @@ export class UserserviceService {
     street:'sudarshana road',
   }
 
+  
+
 
   }
 
@@ -24,8 +25,17 @@ export class UserserviceService {
     return this.user;
   }
 
+  getarray(){
+
+    return [
+      { "Name":"Thilini","Age":"22"},
+      {"Name":"janith","Age":"24"}
   
-  constructor() { }
+    ]
+  }
+
+  
+ // constructor( private http:HttpClient) { }
 }
 
 

@@ -9,6 +9,7 @@ import { User } from '../model/model';
 })
 export class User1Component implements OnInit {
   userget1:User;
+ 
 
   constructor(private _empUser:UserserviceService) {
     
@@ -16,6 +17,7 @@ export class User1Component implements OnInit {
 
   ngOnInit() {
     this.userget1=this._empUser.getuser();
+   
   }
 
 }
